@@ -16,8 +16,8 @@ expenses tracker application in tkinter
 
 ### examples of simpler product:
 
-<img src="images/img1.png" width="275" height="500">
-<img src="images/img2.png" width="275" height="500">
+<img src="images/img1.png" width="250" height="400">
+<img src="images/img2.png" width="250" height="400">
 
 images taken from [mony](https://play.google.com/store/apps/details?id=com.jojdevx.expense.tracker&hl=en) expenses tracking app
 
