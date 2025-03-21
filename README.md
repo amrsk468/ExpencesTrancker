@@ -1,6 +1,9 @@
 # <ins> Expenses Tracker <ins>
 
-An Expense Tracker App built using Tkinter provides a simple and user-friendly interface to record, manage, and track daily expenses. Users can add, view, edit, and delete transactions with categorized entries. The app stores expense data in a CSV file for easy access and portability. With a clean UI and basic expense summaries, this app helps users keep track of their spending efficiently.
+An Expense Tracker App built using Tkinter provides a simple and user-friendly interface to record, manage, and track daily expenses.
+Users can add, view, edit, and delete transactions with categorized entries.
+The app stores expense data in a CSV file for easy access and portability.
+With a clean UI and basic expense summaries, this app helps users keep track of their spending efficiently.
 
 ### <ins> program features: <ins>
 
