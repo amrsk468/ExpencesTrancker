@@ -1,0 +1,11 @@
+{
+  "bank": {
+    "balance": 1000
+  },
+  "savings": {
+    "balance": 5000
+  },
+  "wallet": {
+    "balance": 200
+  }
+}
