@@ -8,21 +8,26 @@ import datetime as dt
 import json
 
 def save_accounts():
-    with open("accounts.json", "w") as f:
-        json.dump(accounts, f)
+    with open("accounts.json", "w") as file:
+        json.dump(accounts, file)
+
+def delete_transaction(transaction: str):
+    split_transaction = transaction.split(" ")
+    split_transaction.remove("category:")
+    split_transaction.remove("amount:")
+    split_transaction.remove("date:")
+    split_transaction[1] = int(split_transaction[1][1:])
+    print(split_transaction)
 
 def account_view_transactions(account: tuple, win: Toplevel, items: list = []):
     win.title(f"{account[0]} transactions")
-    win.geometry("300x600+1110+100")
-    transactions_text = Text(win, height=37, width=37,)
-    transactions_text.grid(columnspan=4)
-    account_transactions = transactions[transactions["account"] == account[0]]
-    account_transactions = account_transactions[["category","amount","date"]]
-    pd.set_option('display.max_rows', None)
-    pd.set_option('display.max_columns', None)
-    pd.set_option('display.width', None)
-    pd.set_option('display.max_colwidth', 1)
-    transactions_text.insert(END, account_transactions.to_string(index=False))
+    win.geometry("500x600+910+100")
+    listbox = Listbox(win, width=82, height=35)
+    listbox.grid(row=0, column=0)
+    for transaction in transactions_list:
+        listbox.insert(END, f"category: {transaction[1]} amount: ${transaction[2]} date: {transaction[3]}")
+    delete_button = Button(win, text="Delete", command=lambda: delete_transaction(listbox.get(ACTIVE)))
+    delete_button.grid(row=1, column=0)
 
 def account_modify(account: tuple, win: Frame, items: list):
     pass
@@ -66,12 +71,14 @@ with open("accounts.json", "r") as f:
     global accounts
     accounts = json.load(f)
 
-global transactions
+global transactions, transactions_list
 transactions = pd.read_csv("transactions.csv")
+transactions = transactions[["id","account","category","amount","date"]]
+transactions_list = transactions[["account","category","amount","date"]].values.tolist()
 
 root = Tk()
 root.title("Expenses Tracker")
-root.geometry("800x600+300+100")
+root.geometry("800x600+100+100")
 root.iconbitmap("assets/logo.ico")
 
 tab_manager = ttk.Notebook(root)
