@@ -19,7 +19,7 @@ With a clean UI and basic expense summaries, this app helps users keep track of 
 
 ### examples of simpler product:
 
-<img src="images/img1.png" width="275" height="500">  <img src="images/img2.png" width="275" height="500">
+<img src="assets/images/img1.png" width="275" height="500">  <img src="assets/images/img2.png" width="275" height="500">
 
 images taken from [mony](https://play.google.com/store/apps/details?id=com.jojdevx.expense.tracker&hl=en) expenses tracking app
 
