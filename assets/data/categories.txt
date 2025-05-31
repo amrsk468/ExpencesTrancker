@@ -1,6 +1,0 @@
-bills
-food
-transport
-entertaimnt
-clothes
-salary
